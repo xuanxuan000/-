@@ -30,9 +30,11 @@ int main(int argc, char *argv[])
     QObject::connect(timer, &QTimer::timeout, &w, [&](){
         qDebug() << "show";
         w.showFullScreen();
+//        mySleep(1000, true);
         mySleep(3*60*1000, true);
         w.hide();
     });
+//    timer->start(5*1000);
     timer->start(50*60*1000);
 
     return a.exec();
